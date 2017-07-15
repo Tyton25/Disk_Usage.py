@@ -50,9 +50,15 @@ def validate_basedir(topdir):
 def validate_subdir(subdirs):
 	subdirs = os.norm.normpath(subdirs)
 
-def get_directories(top, sub):
-	sub = 
-	os.system(('find %s -maxdepth 3 -type d | grep %s')%(base, sub))
+def get_directories(top, subdirs,subdir_length):
+	final_dirs = []
+	dirs = os.system(('find %s -maxdepth 3 -type d | grep %s')%(top, subdirs))
+	loc = find(subdirs)
+	for x in subdirs:
+		
+	for y in dirs:
+		if y not in final_dirs:
+			final_dirs.append(y)
 	
 def get_disk_usage(dir):
 	dirslength = len(dir)
