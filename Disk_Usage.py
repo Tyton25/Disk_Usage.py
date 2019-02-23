@@ -1,6 +1,7 @@
 #!/usr/bin/env/python2
 
 import os, sys, csv
+import csv
 
 variable = ''
 
