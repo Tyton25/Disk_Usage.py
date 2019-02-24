@@ -1,7 +1,7 @@
 #!/usr/bin/env/python2
 
 import os, sys, csv
-import csv
+import re
 
 variable = ''
 
@@ -13,19 +13,19 @@ def main():
     dirs_len = []
     final_dirs_out = []
 
-    if not args:
+if not args:
 	p.print_help()
 	sys.exit()
 
-    base_dir = validate_basedir(basedir)
-    sub_dir = validate_subdir(subdir)
-    dirs = get_dirs(base_dir, sub_dir)
-    disk_usage = get_disk_usage(dirs)
+base_dir = validate_basedir(basedir)
+sub_dir = validate_subdir(subdir)
+dirs = get_dirs(base_dir, sub_dir)
+disk_usage = get_disk_usage(dirs)
 
 #Functions
 
 def options_parser():
-    parser = OptionParser(description='%prog --output <Option>')
+	parser = OptionParser(description='%prog --output <Option>')
 
     parser.add_option('-o', '--output',
         	type='string',
